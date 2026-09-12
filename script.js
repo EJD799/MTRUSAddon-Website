@@ -40,3 +40,18 @@ for (let i = 0; i < galleryImages.length; i++) {
     divEl.appendChild(imgEl);
     gallery.appendChild(divEl);
 }
+
+let heroImageCycle = -1;
+
+function cycleHeroImage() {
+    heroImageCycle++;
+    if (heroImageCycle == galleryImages.length) {
+        heroImageCycle = 0;
+    }
+    heroImage.setAttribute("src", galleryImages[heroImageCycle][0]);
+    heroImage.setAttribute("alt", galleryImages[heroImageCycle][1]);
+
+    setTimeout(cycleHeroImage, 2000);
+}
+
+cycleHeroImage();
