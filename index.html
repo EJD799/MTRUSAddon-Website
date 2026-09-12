@@ -6,6 +6,7 @@
         <title>MTR US Addon</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+        <link rel="icon" href="logo.png" type="image/png">
     </head>
 
     <body>
@@ -41,34 +42,16 @@
         <section id="features" class="reveal">
             <h2>Gallery</h2>
 
-            <div class="gallery">
+            <div class="gallery" id="gallery">
                 <div class="image">
                     <img src="images/screenshot1.jpg" alt="">
-                </div>
-
-                <div class="image">
-                    <img src="images/screenshot2.jpg" alt="">
-                </div>
-
-                <div class="image">
-                    <img src="images/screenshot3.jpg" alt="">
                 </div>
             </div>
         </section>
 
         <footer>Website created by @PtaterTot and @EJD799</footer>
 
-        <script>
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("show");
-                    }
-                });
-            }, {threshold: 0.15});
-
-            document.querySelectorAll(".reveal").forEach(e => observer.observe(e));
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>
 

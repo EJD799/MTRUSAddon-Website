@@ -1,6 +1,8 @@
 :root {
     --primary: #b02748;
+    --primaryLight: #d73158;
     --secondary: #2e4266;
+    --secondaryLight: #3b5584;
     --background: #eef2f5;
     --card: #ffffff;
     --text: #2d3748;
@@ -93,6 +95,10 @@ nav a:hover::after {
     width: 100%;
 }
 
+nav a:hover {
+    color: var(--secondary);
+}
+
 .hero {
     max-width: 1200px;
     margin: auto;
@@ -134,10 +140,18 @@ nav a:hover::after {
     color: white;
 }
 
+.primary:hover {
+    background: var(--primaryLight);
+}
+
 .secondary {
     border: 2px solid var(--secondary);
     color: var(--secondary);
-    
+}
+
+.secondary:hover {
+    background: var(--secondary);
+    color: white;
 }
 
 .btn:hover {
