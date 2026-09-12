@@ -1,1 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MTR US Addon</title>
+
+<style>
+:root{
+    --primary:#16324f;
+    --accent:#005bbb;
+    --background:#eef2f5;
+    --card:#ffffff;
+    --text:#2d3748;
+    --border:#d9e1e8;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--background);
+    color:var(--text);
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+}
+
+nav{
+    max-width:1200px;
+    margin:auto;
+    height:70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 24px;
+}
+
+.logo{
+    font-size:1.35rem;
+    font-weight:700;
+    color:var(--primary);
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:var(--text);
+    text-decoration:none;
+    position:relative;
+    font-weight:500;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:var(--accent);
+    transition:.25s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+.hero{
+    max-width:1200px;
+    margin:auto;
+    padding:80px 24px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.hero p{
+    line-height:1.8;
+    color:#555;
+    margin-bottom:35px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 28px;
+    border-radius:12px;
+    text-decoration:none;
+    transition:.25s;
+    font-weight:600;
+}
+
+.primary{
+    background:var(--accent);
+    color:white;
+}
+
+.secondary{
+    border:2px solid var(--accent);
+    color:var(--accent);
+    
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+.hero-image{
+    height:380px;
+    border-radius:20px;
+    background:
+    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+    url("images/hero.jpg") center/cover;
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+}
+
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:70px 24px;
+}
+
+h2{
+    font-size:2rem;
+    margin-bottom:35px;
+    color:var(--primary);
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:28px;
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.card h3{
+    margin-bottom:12px;
+    color:var(--primary);
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:20px;
+}
+
+.image{
+    aspect-ratio:16/9;
+    border-radius:18px;
+    overflow:hidden;
+    background:#cfd8df;
+    transition:.3s;
+}
+
+.image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.35s;
+}
+
+.image:hover img{
+    transform:scale(1.03);
+}
+
+.download{
+    background:white;
+    border-radius:18px;
+    border:1px solid var(--border);
+    padding:35px;
+    text-align:center;
+}
+
+.download h3{
+    margin-bottom:12px;
+    color:var(--primary);
+}
+
+footer{
+    margin-top:80px;
+    border-top:1px solid var(--border);
+    text-align:center;
+    padding:35px;
+    color:#666;
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:.8s;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:none;
+}
+
+@media(max-width:900px){
+
+.hero{
+grid-template-columns:1fr;
+}
+
+.hero-image{
+<div class="hero-slider">
+
+    <img src="images/hero1.jpg" class="active">
+    <img src="images/hero2.jpg">
+    <img src="images/hero3.jpg">
+
+    <div class="image-credit">
+        Screenshot by Liam
+    </div>
+
+</div>
+}
+
+.hero h1{
+font-size:2.6rem;
+}
+
+nav ul{
+display:none;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">MTR US Addon</div>
+
+<ul>
+<li><a href="#features">Features</a></li>
+<li><a href="#gallery">Gallery</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div>
+
+<h1>MTR US Addon</h1>
+
+<p>
+A large expansion to Minecraft Transit Railway, focused on United States rail.
+</p>
+
+<div class="buttons">
+
+<a class="btn primary" href="https://modrinth.com/mod/mtr-us-addon">Download</a>
+
+<a class="btn secondary" href="https://github.com/EJD799/MTR-US-Addon">GitHub</a>
+
+</div>
+
+</div>
+
+<div class="hero-image"></div>
+
+</section>
+
+<section id="features" class="reveal">
+
+<h2>Gallery</h2>
+
+<div class="gallery">
+
+<div class="image">
+<img src="images/screenshot1.jpg" alt="">
+</div>
+
+<div class="image">
+<img src="images/screenshot2.jpg" alt="">
+</div>
+
+<div class="image">
+<img src="images/screenshot3.jpg" alt="">
+</div>
+
+</div>
+
+<footer>
+
+I am a footer
+
+</footer>
+
+<script>
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+},{threshold:.15});
+
+document.querySelectorAll(".reveal").forEach(e=>observer.observe(e));
+</script>
+
+</body>
+</html>
 
